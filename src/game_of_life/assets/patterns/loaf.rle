@@ -1,0 +1,13 @@
+#N Loaf
+#O John Conway, 1970
+#C explanation: Seven cells with a tail. One of the four still lifes that turn up
+#C explanation: constantly in random soups, together with the block, the beehive and the
+#C explanation: boat.
+#C category: still-life
+#C board: 12x12
+#C boundary: torus
+#C frame_range: cycle
+#C generations: 4
+#C offset: 4,4
+x = 4, y = 4, rule = B3/S23
+b2o$o2bo$bobo$2bo!

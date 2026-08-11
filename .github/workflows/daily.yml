@@ -1,0 +1,52 @@
+# Sixty days of repository inactivity disables scheduled workflows. That is
+# known behaviour, and `workflow_dispatch` below is the way back.
+name: Daily board
+
+on:
+  schedule:
+    # 22:10 UTC daily. GitHub's cron drifts by minutes under load, so an exact
+    # hour boundary is avoided.
+    - cron: "10 22 * * *"
+  workflow_dispatch:
+
+# The default is read. Only the push to the output branch needs write.
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-board
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+
+      - name: Generate
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: PYTHONPATH=src python3 -m game_of_life grass --login "${{ github.repository_owner }}" --out output
+
+      # Retained for diagnosis when a run produces something unexpected. This
+      # step does not publish anything.
+      - name: Upload the artefacts for inspection
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: board
+          path: output/
+
+      # Publication is a single push, so both themes appear together. If one
+      # theme could land on its own, the README would point at a half-updated
+      # board.
+      - name: Push
+        run: |
+          set -euo pipefail
+          test -n "$(ls -A output)" || { echo "no artefacts were produced"; exit 1; }
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout --orphan output-tmp
+          git rm -rf --cached . >/dev/null
+          git add -f output
+          git commit -m "chore: daily board $(date -u +%Y-%m-%d)"
+          git push --force origin HEAD:output

@@ -1,0 +1,13 @@
+#N Lightweight spaceship
+#O John Conway, 1970
+#C explanation: The smallest spaceship that travels straight rather than diagonally,
+#C explanation: moving two squares every four generations. Two heavier siblings exist
+#C explanation: but neither is stable alone.
+#C category: spaceship
+#C board: 24x16
+#C boundary: torus
+#C frame_range: cycle
+#C generations: 96
+#C offset: 2,6
+x = 5, y = 4, rule = B3/S23
+bo2bo$o4b$o3bo$4o!

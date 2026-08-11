@@ -1,0 +1,13 @@
+#N Two gliders meeting
+#O —
+#C explanation: Two gliders sent on a collision course. What survives a collision
+#C explanation: depends entirely on the phase at which they meet: some pairings
+#C explanation: annihilate, others leave a block or a blinker behind.
+#C category: misc
+#C board: 24x24
+#C boundary: torus
+#C frame_range: head
+#C generations: 120
+#C offset: 2,2
+x = 12, y = 13, rule = B3/S23
+bo$2bo$3o8$9b3o$9bo$10bo!

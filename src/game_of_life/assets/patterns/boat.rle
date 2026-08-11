@@ -1,0 +1,12 @@
+#N Boat
+#O John Conway, 1970
+#C explanation: Five cells: a block with one corner pulled out. The smallest still life
+#C explanation: that is not symmetric under a quarter turn.
+#C category: still-life
+#C board: 12x12
+#C boundary: torus
+#C frame_range: cycle
+#C generations: 4
+#C offset: 5,5
+x = 3, y = 3, rule = B3/S23
+2o$obo$bo!

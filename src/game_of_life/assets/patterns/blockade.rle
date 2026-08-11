@@ -1,0 +1,12 @@
+#N Blockade
+#O John Conway, 1970
+#C explanation: Four blocks arranged in a square. It never changes, but the empty space
+#C explanation: it encloses is a common trap for gliders passing through a busy field.
+#C category: misc
+#C board: 24x24
+#C boundary: torus
+#C frame_range: cycle
+#C generations: 8
+#C offset: 7,7
+x = 9, y = 9, rule = B3/S23
+2o5b2o$2o5b2o5$2o5b2o$2o5b2o!

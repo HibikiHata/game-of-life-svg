@@ -1,0 +1,12 @@
+#N Bunnies
+#O Robert Wainwright, 1971
+#C explanation: Nine cells that take 17,332 generations to stabilise — far longer than
+#C explanation: the acorn, though the name is gentler.
+#C category: methuselah
+#C board: 80x80
+#C boundary: fixed
+#C frame_range: head
+#C generations: 400
+#C offset: 36,38
+x = 8, y = 4, rule = B3/S23
+o5bob$2bo3bob$2bo2bobo$bobo4b!

@@ -1,0 +1,13 @@
+#N Loafer
+#O Josh Ball, 2013
+#C explanation: A slow spaceship found more than forty years after the classic ones, by
+#C explanation: a search program. It moves one square every seven generations, which is
+#C explanation: unusually leisurely.
+#C category: spaceship
+#C board: 28x16
+#C boundary: torus
+#C frame_range: head
+#C generations: 120
+#C offset: 2,6
+x = 9, y = 9, rule = B3/S23
+b2o2bob2o$o2bo2b2o$bobo$2bo$8bo$6b3o$5bo$6bo$7b2o!

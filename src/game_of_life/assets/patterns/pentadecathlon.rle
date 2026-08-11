@@ -1,0 +1,12 @@
+#N Pentadecathlon
+#O John Conway, 1970
+#C explanation: Period fifteen, the longest of the small oscillators. Conway found it
+#C explanation: while tracking a row of ten cells, which is exactly what it starts as.
+#C category: oscillator
+#C board: 20x20
+#C boundary: torus
+#C frame_range: cycle
+#C generations: 30
+#C offset: 4,8
+x = 10, y = 3, rule = B3/S23
+2bo4bo2b$2ob4ob2o$2bo4bo2b!

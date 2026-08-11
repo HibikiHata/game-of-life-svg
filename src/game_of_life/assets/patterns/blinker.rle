@@ -1,0 +1,13 @@
+#N Blinker
+#O John Conway, 1970
+#C explanation: The smallest oscillator: three cells that flip between horizontal and
+#C explanation: vertical every generation. Almost every random start produces several of
+#C explanation: these.
+#C category: oscillator
+#C board: 12x12
+#C boundary: torus
+#C frame_range: cycle
+#C generations: 8
+#C offset: 4,5
+x = 3, y = 1, rule = B3/S23
+3o!

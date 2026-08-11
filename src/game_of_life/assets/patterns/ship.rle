@@ -1,0 +1,12 @@
+#N Ship
+#O John Conway, 1970
+#C explanation: A boat with both corners extended. It does not move despite the name;
+#C explanation: the naming convention in Life is older than the taxonomy.
+#C category: still-life
+#C board: 12x12
+#C boundary: torus
+#C frame_range: cycle
+#C generations: 4
+#C offset: 5,5
+x = 3, y = 3, rule = B3/S23
+2o$obo$b2o!

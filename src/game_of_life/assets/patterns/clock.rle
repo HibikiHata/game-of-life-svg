@@ -1,0 +1,13 @@
+#N Clock
+#O Simon Norton, 1970
+#C explanation: A period-two oscillator with four-fold symmetry. Rotating it a quarter
+#C explanation: turn gives the same figure, which is why the phases look like a hand
+#C explanation: sweeping.
+#C category: oscillator
+#C board: 12x12
+#C boundary: torus
+#C frame_range: cycle
+#C generations: 8
+#C offset: 4,4
+x = 4, y = 4, rule = B3/S23
+2bo$2o$2b2o$bo!

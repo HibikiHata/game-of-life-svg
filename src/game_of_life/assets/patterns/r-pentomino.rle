@@ -1,0 +1,13 @@
+#N R-pentomino
+#O John Conway, 1970
+#C explanation: Five cells that stay chaotic for 1,103 generations before settling into
+#C explanation: a scatter of debris and six escaping gliders. Conway tracked it by hand
+#C explanation: on a Go board; it was what convinced him that Life was worth studying.
+#C category: methuselah
+#C board: 80x80
+#C boundary: fixed
+#C frame_range: head
+#C generations: 400
+#C offset: 38,38
+x = 3, y = 3, rule = B3/S23
+b2o$2ob$bo!

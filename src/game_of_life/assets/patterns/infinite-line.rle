@@ -1,0 +1,12 @@
+#N Infinite growth from one row
+#O Unknown, 1971
+#C explanation: A single row of cells with two gaps. Despite starting as a line it never
+#C explanation: settles, growing steadily along both axes.
+#C category: misc
+#C board: 60x40
+#C boundary: fixed
+#C frame_range: head
+#C generations: 300
+#C offset: 12,18
+x = 40, y = 1, rule = B3/S23
+8o4bo5b3o3b6o5b5o!

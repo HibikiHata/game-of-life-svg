@@ -1,0 +1,12 @@
+#N Toad
+#O Simon Norton, 1970
+#C explanation: Two offset rows of three that appear to breathe. Period two, like the
+#C explanation: blinker, but it needs six cells instead of three.
+#C category: oscillator
+#C board: 12x12
+#C boundary: torus
+#C frame_range: cycle
+#C generations: 8
+#C offset: 4,5
+x = 4, y = 2, rule = B3/S23
+b3o$3o!

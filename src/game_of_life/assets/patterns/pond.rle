@@ -1,0 +1,12 @@
+#N Pond
+#O John Conway, 1970
+#C explanation: An eight-cell ring. Ponds often appear in pairs or next to blocks at the
+#C explanation: end of a long chaotic run.
+#C category: still-life
+#C board: 12x12
+#C boundary: torus
+#C frame_range: cycle
+#C generations: 4
+#C offset: 4,4
+x = 4, y = 4, rule = B3/S23
+b2o$o2bo$o2bo$b2o!

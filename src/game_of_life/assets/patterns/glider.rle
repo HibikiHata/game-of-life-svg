@@ -1,0 +1,14 @@
+#N Glider
+#O Richard Guy, 1969
+#C explanation: The smallest and most famous moving object: five cells that travel one
+#C explanation: square diagonally every four generations. On a wrapping board a glider
+#C explanation: returns to its start after four times the board width, which is what
+#C explanation: makes a seamless loop possible.
+#C category: spaceship
+#C board: 20x20
+#C boundary: torus
+#C frame_range: cycle
+#C generations: 80
+#C offset: 2,2
+x = 3, y = 3, rule = B3/S23
+bo$2bo$3o!

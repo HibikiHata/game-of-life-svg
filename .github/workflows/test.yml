@@ -1,0 +1,64 @@
+name: Test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  unit:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install the test dependencies
+        # The package itself uses the standard library only.
+        run: python -m pip install --upgrade pytest PyYAML
+      - name: Run the tests
+        run: python -m pytest tests -q
+
+  action:
+    # The published interface is the Action, not the library. Testing only the
+    # library would let action.yml break without anything noticing, and only
+    # adopters would find out.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+      - uses: ./
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: ci-output
+          limit: "30"
+      - name: The artefacts exist and are not empty
+        run: |
+          set -euo pipefail
+          test -s ci-output/life-light-static.svg
+          test -s ci-output/life-dark-static.svg
+          # The animated pair is emitted only when the board actually moves, so
+          # its absence is a valid outcome rather than a failure.
+          ls -l ci-output
+
+  gallery-drift:
+    # docs/ holds committed build output. Without this, the gallery on the
+    # published page can quietly diverge from what the code produces.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12"
+      - name: Rebuild the gallery and compare
+        run: |
+          set -euo pipefail
+          PYTHONPATH=src python3 -m game_of_life gallery --out /tmp/gallery
+          diff -r docs /tmp/gallery

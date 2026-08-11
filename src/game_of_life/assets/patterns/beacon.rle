@@ -1,0 +1,12 @@
+#N Beacon
+#O John Conway, 1970
+#C explanation: Two blocks touching at a corner. The two cells nearest the join blink on
+#C explanation: and off, so the blocks appear to merge and separate.
+#C category: oscillator
+#C board: 12x12
+#C boundary: torus
+#C frame_range: cycle
+#C generations: 8
+#C offset: 4,4
+x = 4, y = 4, rule = B3/S23
+2o$2o$2b2o$2b2o!

@@ -1,0 +1,12 @@
+#N Figure eight
+#O Simon Norton, 1970
+#C explanation: Period eight. Two blocks of three chase each other diagonally and
+#C explanation: return, tracing the shape the name suggests.
+#C category: oscillator
+#C board: 16x16
+#C boundary: torus
+#C frame_range: cycle
+#C generations: 16
+#C offset: 5,5
+x = 6, y = 6, rule = B3/S23
+3o3b$3o3b$3o3b$3b3o$3b3o$3b3o!

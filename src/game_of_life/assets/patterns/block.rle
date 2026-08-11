@@ -1,0 +1,13 @@
+#N Block
+#O John Conway, 1970
+#C explanation: Four cells in a square. Every cell has exactly three neighbours, so
+#C explanation: every cell survives and nothing new is born. It is the smallest thing in
+#C explanation: Life that simply refuses to change.
+#C category: still-life
+#C board: 12x12
+#C boundary: torus
+#C frame_range: cycle
+#C generations: 4
+#C offset: 5,5
+x = 2, y = 2, rule = B3/S23
+2o$2o!

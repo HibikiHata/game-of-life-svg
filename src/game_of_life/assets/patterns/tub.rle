@@ -1,0 +1,12 @@
+#N Tub
+#O John Conway, 1970
+#C explanation: A ring of four cells around an empty centre. Add one cell to a corner
+#C explanation: and it becomes a boat; add two and it becomes a ship.
+#C category: still-life
+#C board: 12x12
+#C boundary: torus
+#C frame_range: cycle
+#C generations: 4
+#C offset: 5,5
+x = 3, y = 3, rule = B3/S23
+bo$obo$bo!

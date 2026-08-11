@@ -1,0 +1,13 @@
+#N Diehard
+#O Unknown, 1970s
+#C explanation: Seven cells that survive exactly 130 generations and then vanish
+#C explanation: completely. No pattern of seven or fewer cells lives longer before dying
+#C explanation: out entirely.
+#C category: methuselah
+#C board: 40x40
+#C boundary: fixed
+#C frame_range: full
+#C generations: 200
+#C offset: 16,18
+x = 8, y = 3, rule = B3/S23
+6bob$2o6b$bo3b3o!

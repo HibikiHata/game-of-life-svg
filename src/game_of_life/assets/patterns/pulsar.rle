@@ -1,0 +1,13 @@
+#N Pulsar
+#O John Conway, 1970
+#C explanation: The most common period-three oscillator, and one of the largest patterns
+#C explanation: that still appears spontaneously from a random start. Its three phases
+#C explanation: are strikingly different.
+#C category: oscillator
+#C board: 20x20
+#C boundary: torus
+#C frame_range: cycle
+#C generations: 12
+#C offset: 3,3
+x = 13, y = 13, rule = B3/S23
+2b3o3b3o2b$12b$o4bobo4bo$o4bobo4bo$o4bobo4bo$2b3o3b3o2b$12b$2b3o3b3o2b$o4bobo4bo$o4bobo4bo$o4bobo4bo$12b$2b3o3b3o2b!

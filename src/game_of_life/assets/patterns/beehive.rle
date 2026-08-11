@@ -1,0 +1,13 @@
+#N Beehive
+#O John Conway, 1970
+#C explanation: A hexagon of six cells. Like the block it is perfectly balanced, but it
+#C explanation: is the shape that most often appears when a busy region finally settles
+#C explanation: down.
+#C category: still-life
+#C board: 12x12
+#C boundary: torus
+#C frame_range: cycle
+#C generations: 4
+#C offset: 4,5
+x = 4, y = 3, rule = B3/S23
+b2o$o2bo$b2o!

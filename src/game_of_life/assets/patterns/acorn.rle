@@ -1,0 +1,13 @@
+#N Acorn
+#O Charles Corderman, 1971
+#C explanation: Seven cells that run for 5,206 generations. It ends as more than six
+#C explanation: hundred cells scattered over a region far larger than anything the start
+#C explanation: suggests.
+#C category: methuselah
+#C board: 100x100
+#C boundary: fixed
+#C frame_range: head
+#C generations: 400
+#C offset: 46,48
+x = 7, y = 3, rule = B3/S23
+bo4b$3bo2b$2o2b3o!

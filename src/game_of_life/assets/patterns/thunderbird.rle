@@ -1,0 +1,12 @@
+#N Thunderbird
+#O Unknown, 1970s
+#C explanation: Six cells in a T. It burns for 243 generations from a start simple
+#C explanation: enough to draw from memory.
+#C category: methuselah
+#C board: 40x40
+#C boundary: fixed
+#C frame_range: head
+#C generations: 250
+#C offset: 18,16
+x = 3, y = 5, rule = B3/S23
+3o$3b$b1ob$b1ob$b1ob!

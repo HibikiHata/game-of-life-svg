@@ -1,0 +1,41 @@
+# The input names follow Platane/snk, so adopters meet a shape they already know.
+name: "game-of-life-svg"
+description: "Generate an animated Game of Life SVG seeded by a GitHub contribution graph"
+author: "HibikiHata"
+branding:
+  icon: "grid"
+  color: "green"
+
+inputs:
+  github_user_name:
+    description: "GitHub user whose contribution calendar seeds the board"
+    required: true
+  github_token:
+    description: >
+      Token used to read the contribution calendar. Defaults to the workflow's
+      own token, which is sufficient — the calendar is public data.
+    required: false
+    default: ${{ github.token }}
+  outputs:
+    description: "Directory the SVGs are written to"
+    required: false
+    default: "output"
+  limit:
+    description: "Generations to compute; also the number of frames baked"
+    required: false
+    default: "120"
+
+runs:
+  using: composite
+  steps:
+    - name: Generate
+      shell: bash
+      env:
+        # The token travels only in the environment. As an argument it would
+        # appear in the process list and in the workflow log.
+        GITHUB_TOKEN: ${{ inputs.github_token }}
+      run: |
+        PYTHONPATH="${{ github.action_path }}/src" python3 -m game_of_life grass \
+          --login "${{ inputs.github_user_name }}" \
+          --out "${{ inputs.outputs }}" \
+          --limit "${{ inputs.limit }}"
