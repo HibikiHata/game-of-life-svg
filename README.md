@@ -17,7 +17,7 @@ switched with a single CSS `@keyframes` rule, so the file plays inside an
 
 | | |
 |---|---|
-| **[Pattern gallery](docs/patterns.md)** | 30 patterns across six categories, each as four files: animated and static, light and dark. Download one and drop it into a README or a slide. |
+| **[Pattern gallery](docs/patterns.md)** | 35 patterns across six categories, each as four files: animated and static, light and dark. Download one and drop it into a README or a slide. |
 | **Daily widget** | An Action that reads your contribution calendar every day and renders a board that evolves from it. |
 
 ## Using the widget

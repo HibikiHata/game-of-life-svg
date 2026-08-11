@@ -66,6 +66,17 @@ Five cells: a block with one corner pulled out. The smallest still life that is 
 
 Board 12×12, torus boundary. [Download the pattern](../src/game_of_life/assets/patterns/boat.rle) · Still image for reduced motion: [light](patterns/boat-light-static.svg) · [dark](patterns/boat-dark-static.svg)
 
+### Eater 1 — Bill Gosper, 1971
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="patterns/eater1-dark.svg">
+  <img src="patterns/eater1-light.svg" alt="Eater 1">
+</picture>
+
+Seven cells that never move, which is the least interesting thing about them. Run a glider into the notch and the collision destroys the glider while the eater rebuilds itself within four generations. That made it the first way to delete a signal without leaving debris, and it turns up as a component inside a great many larger constructions.
+
+Board 12×12, torus boundary. [Download the pattern](../src/game_of_life/assets/patterns/eater1.rle) · Still image for reduced motion: [light](patterns/eater1-light-static.svg) · [dark](patterns/eater1-dark-static.svg)
+
 ### Loaf — John Conway, 1970
 
 <picture>
@@ -324,6 +335,17 @@ Seven cells that survive exactly 130 generations and then vanish completely. No 
 
 Board 40×40, fixed boundary. [Download the pattern](../src/game_of_life/assets/patterns/diehard.rle) · Still image for reduced motion: [light](patterns/diehard-light-static.svg) · [dark](patterns/diehard-dark-static.svg)
 
+### Herschel — John Conway, 1970
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="patterns/herschel-dark.svg">
+  <img src="patterns/herschel-light.svg" alt="Herschel">
+</picture>
+
+Seven cells shaped like a lowercase h. Left alone it burns for hundreds of generations, which is what you see here, but that is not why it is famous. Its early evolution is precise and repeatable, so a Herschel can be caught by still lifes and steered along a fixed path. Chains of such conduits are how signals are routed in engineered Life circuitry.
+
+Board 80×80, fixed boundary. [Download the pattern](../src/game_of_life/assets/patterns/herschel.rle) · Still image for reduced motion: [light](patterns/herschel-light-static.svg) · [dark](patterns/herschel-dark-static.svg)
+
 ### R-pentomino — John Conway, 1970
 
 <picture>
@@ -334,6 +356,17 @@ Board 40×40, fixed boundary. [Download the pattern](../src/game_of_life/assets/
 Five cells that stay chaotic for 1,103 generations before settling into a scatter of debris and six escaping gliders. Conway tracked it by hand on a Go board; it was what convinced him that Life was worth studying.
 
 Board 80×80, fixed boundary. [Download the pattern](../src/game_of_life/assets/patterns/r-pentomino.rle) · Still image for reduced motion: [light](patterns/r-pentomino-light-static.svg) · [dark](patterns/r-pentomino-dark-static.svg)
+
+### Switch engine — Charles Corderman, 1971
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="patterns/switch-engine-dark.svg">
+  <img src="patterns/switch-engine-light.svg" alt="Switch engine">
+</picture>
+
+Eight cells that crawl diagonally, leaving a trail of debris behind them. On its own the engine eventually chokes on its own wake, but paired with a second copy or a well-placed block it keeps going forever. It is the only known way for unbounded growth to appear by accident from a random starting soup, which makes it the engine behind most naturally occurring infinite growth.
+
+Board 70×70, fixed boundary. [Download the pattern](../src/game_of_life/assets/patterns/switch-engine.rle) · Still image for reduced motion: [light](patterns/switch-engine-light-static.svg) · [dark](patterns/switch-engine-dark-static.svg)
 
 ### Thunderbird — Unknown, 1970s
 
@@ -348,7 +381,7 @@ Board 40×40, fixed boundary. [Download the pattern](../src/game_of_life/assets/
 
 ## Everything else (`misc`)
 
-Collisions, unbounded growth from a single row, and other patterns that do not fit the categories above.
+Puffers that move and leave debris behind them, a reflector that turns a passing glider, collisions, unbounded growth from a single row — patterns whose behaviour does not fit the categories above.
 
 ### Blockade — John Conway, 1970
 
@@ -371,6 +404,28 @@ Board 24×24, torus boundary. [Download the pattern](../src/game_of_life/assets/
 A single row of cells with two gaps. Despite starting as a line it never settles, growing steadily along both axes.
 
 Board 60×40, fixed boundary. [Download the pattern](../src/game_of_life/assets/patterns/infinite-line.rle) · Still image for reduced motion: [light](patterns/infinite-line-light-static.svg) · [dark](patterns/infinite-line-dark-static.svg)
+
+### Puffer 1 — Bill Gosper, 1971
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="patterns/puffer1-dark.svg">
+  <img src="patterns/puffer1-light.svg" alt="Puffer 1">
+</picture>
+
+The first pattern found that moves and leaves something behind. Two lightweight spaceships tow an unstable centre that sheds a repeating trail of blocks and blinkers every 128 generations. Before this, moving objects kept their cells and stationary ones stayed put; a puffer does neither, and it opened the way to patterns whose population grows without limit.
+
+Board 32×110, fixed boundary. [Download the pattern](../src/game_of_life/assets/patterns/puffer1.rle) · Still image for reduced motion: [light](patterns/puffer1-light-static.svg) · [dark](patterns/puffer1-dark-static.svg)
+
+### Snark — Mike Playle, 2013
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="patterns/snark-dark.svg">
+  <img src="patterns/snark-light.svg" alt="Snark">
+</picture>
+
+A still life that turns a passing glider through ninety degrees and is back in its original state 43 generations later, ready for the next one. Stable reflectors had been hunted since the 1970s and the known ones were large or slow; this one is small, fast, and needs no clock of its own. Feeding a glider around a loop of them yields an oscillator of any period from 43 upwards, which is how several long-missing periods were finally filled in.
+
+Board 45×45, fixed boundary. [Download the pattern](../src/game_of_life/assets/patterns/snark.rle) · Still image for reduced motion: [light](patterns/snark-light-static.svg) · [dark](patterns/snark-dark-static.svg)
 
 ### Two gliders meeting
 

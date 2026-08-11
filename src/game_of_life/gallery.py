@@ -37,8 +37,9 @@ CATEGORY_TITLES = {
             "gun is eventually destroyed by its own output."),
     "methuselah": ("Methuselahs", "Small patterns that stay chaotic for a very long time "
                    "before settling. The record holders start from fewer than ten cells."),
-    "misc": ("Everything else", "Collisions, unbounded growth from a single row, and "
-             "other patterns that do not fit the categories above."),
+    "misc": ("Everything else", "Puffers that move and leave debris behind them, a "
+             "reflector that turns a passing glider, collisions, unbounded growth from a "
+             "single row — patterns whose behaviour does not fit the categories above."),
 }
 
 INTRO = """# Pattern gallery

@@ -1,0 +1,15 @@
+#N Herschel
+#O John Conway, 1970
+#C explanation: Seven cells shaped like a lowercase h. Left alone it burns for hundreds of
+#C explanation: generations, which is what you see here, but that is not why it is famous.
+#C explanation: Its early evolution is precise and repeatable, so a Herschel can be caught
+#C explanation: by still lifes and steered along a fixed path. Chains of such conduits are
+#C explanation: how signals are routed in engineered Life circuitry.
+#C category: methuselah
+#C board: 80x80
+#C boundary: fixed
+#C frame_range: head
+#C generations: 120
+#C offset: 37,34
+x = 3, y = 4, rule = B3/S23
+o2b$3o$obo$2bo!

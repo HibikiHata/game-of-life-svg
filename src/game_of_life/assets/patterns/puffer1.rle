@@ -1,0 +1,16 @@
+#N Puffer 1
+#O Bill Gosper, 1971
+#C explanation: The first pattern found that moves and leaves something behind. Two
+#C explanation: lightweight spaceships tow an unstable centre that sheds a repeating trail
+#C explanation: of blocks and blinkers every 128 generations. Before this, moving objects
+#C explanation: kept their cells and stationary ones stayed put; a puffer does neither, and
+#C explanation: it opened the way to patterns whose population grows without limit.
+#C category: misc
+#C board: 32x110
+#C boundary: fixed
+#C frame_range: head
+#C generations: 190
+#C offset: 2,98
+x = 27, y = 7, rule = B3/S23
+b3o6bo5bo6b3ob$o2bo5b3o3b3o5bo2bo$3bo4b2obo3bob2o4bo3b$3bo19bo3b$3bo2bo
+13bo2bo3b$3bo2b2o11b2o2bo3b$2bo3b2o11b2o3bo!

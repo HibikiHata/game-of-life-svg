@@ -1,0 +1,15 @@
+#N Eater 1
+#O Bill Gosper, 1971
+#C explanation: Seven cells that never move, which is the least interesting thing about
+#C explanation: them. Run a glider into the notch and the collision destroys the glider
+#C explanation: while the eater rebuilds itself within four generations. That made it the
+#C explanation: first way to delete a signal without leaving debris, and it turns up as a
+#C explanation: component inside a great many larger constructions.
+#C category: still-life
+#C board: 12x12
+#C boundary: torus
+#C frame_range: cycle
+#C generations: 4
+#C offset: 4,4
+x = 4, y = 4, rule = B3/S23
+2o2b$obob$2bob$2b2o!

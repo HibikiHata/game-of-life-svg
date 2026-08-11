@@ -1,0 +1,16 @@
+#N Switch engine
+#O Charles Corderman, 1971
+#C explanation: Eight cells that crawl diagonally, leaving a trail of debris behind them.
+#C explanation: On its own the engine eventually chokes on its own wake, but paired with a
+#C explanation: second copy or a well-placed block it keeps going forever. It is the only
+#C explanation: known way for unbounded growth to appear by accident from a random
+#C explanation: starting soup, which makes it the engine behind most naturally occurring
+#C explanation: infinite growth.
+#C category: methuselah
+#C board: 70x70
+#C boundary: fixed
+#C frame_range: head
+#C generations: 250
+#C offset: 28,39
+x = 6, y = 4, rule = B3/S23
+bobo2b$o5b$bo2bob$3b3o!
