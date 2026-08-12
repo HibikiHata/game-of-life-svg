@@ -125,7 +125,26 @@ def test_the_page_references_only_artefacts_the_build_produces(built):
     out, _ = built
     text = page(PATTERNS)
     for ref in set(re.findall(r"\(([^)]+\.svg)\)", text)):
+        if ref.startswith("http"):
+            continue          # the daily widget is deliberately remote — see below
         assert (out / ref).is_file(), f"the page references {ref}, which was never built"
+
+
+def test_the_daily_widget_points_at_the_output_branch():
+    """The page's one deliberately remote reference.
+
+    A relative path here would freeze the widget at whatever the build happened
+    to produce, which is the opposite of what it is for. The doubled-directory
+    assertion guards a real defect: publishing the output directory rather than
+    its contents yields `/output/output/life-dark.svg`, and then every URL an
+    adopter copies from this page is wrong.
+    """
+    urls = set(re.findall(r"https://raw\.githubusercontent\.com/[^\s\"')]+\.svg",
+                          page(PATTERNS)))
+    assert urls, "the page no longer references the daily widget"
+    for u in urls:
+        assert "/output/" in u, u
+        assert u.count("/output/") == 1, f"doubled directory in {u}"
 
 
 def test_the_page_is_deterministic():

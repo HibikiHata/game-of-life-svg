@@ -437,3 +437,66 @@ Board 45×45, fixed boundary. [Download the pattern](../src/game_of_life/assets/
 Two gliders sent on a collision course. What survives a collision depends entirely on the phase at which they meet: some pairings annihilate, others leave a block or a blinker behind.
 
 Board 24×24, torus boundary. [Download the pattern](../src/game_of_life/assets/patterns/glider-crash.rle) · Still image for reduced motion: [light](patterns/glider-crash-light-static.svg) · [dark](patterns/glider-crash-dark-static.svg)
+
+## The daily widget
+
+Every pattern above is fixed: the same file plays the same way forever. This one
+is not. It is rebuilt each day from a real GitHub contribution graph, so the
+board below is seeded by whatever that account actually did over the past year,
+and one cell chosen from the date is raised before the board evolves.
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/HibikiHata/game-of-life-svg/output/life-dark.svg">
+  <img src="https://raw.githubusercontent.com/HibikiHata/game-of-life-svg/output/life-light.svg" alt="Game of Life seeded by a GitHub contribution graph">
+</picture>
+
+**The address never changes; the image behind it does.** A scheduled workflow
+force-pushes the new pair to the `output` branch every morning, so a README
+pointing at that URL keeps working without ever being edited.
+
+### Running it on your own graph
+
+Add one workflow to any repository of yours. The only thing it needs is a user
+name:
+
+```yaml
+name: Daily board
+
+on:
+  schedule:
+    - cron: "10 22 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: HibikiHata/game-of-life-svg@v1
+        with:
+          github_user_name: ${{ github.repository_owner }}
+      - name: Publish
+        run: |
+          set -euo pipefail
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout --orphan output-tmp
+          git rm -rf --cached . >/dev/null
+          mv output/*.svg .
+          git add -f ./*.svg
+          git commit -m "chore: daily board"
+          git push --force origin HEAD:output
+```
+
+Then point your profile README at the result:
+
+```markdown
+![Game of Life](https://raw.githubusercontent.com/<you>/<repo>/output/life-dark.svg)
+```
+
+A sparse calendar produces a board that barely moves. When that happens the run
+emits only the still image and says so, rather than presenting a frozen board as
+an animation. The full options are in the
+[README](../README.md).

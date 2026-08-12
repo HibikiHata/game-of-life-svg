@@ -39,6 +39,11 @@ jobs:
       # Publication is a single push, so both themes appear together. If one
       # theme could land on its own, the README would point at a half-updated
       # board.
+      #
+      # The files land at the root of the branch, not inside a directory, so the
+      # raw URL is <owner>/<repo>/output/life-dark.svg with nothing in between.
+      # Publishing the directory itself would double the word in every URL an
+      # adopter copies.
       - name: Push
         run: |
           set -euo pipefail
@@ -47,6 +52,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git checkout --orphan output-tmp
           git rm -rf --cached . >/dev/null
-          git add -f output
+          mv output/*.svg .
+          git add -f ./*.svg
           git commit -m "chore: daily board $(date -u +%Y-%m-%d)"
           git push --force origin HEAD:output
