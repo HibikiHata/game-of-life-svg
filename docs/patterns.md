@@ -454,6 +454,39 @@ and one cell chosen from the date is raised before the board evolves.
 force-pushes the new pair to the `output` branch every morning, so a README
 pointing at that URL keeps working without ever being edited.
 
+### It does not use the rule described at the top of this page
+
+Every pattern above runs under Conway's B3/S23. The widget does not. It uses a
+four-level variant, called `decay` here, where a cell fades over four
+generations instead of dying at once:
+
+| Cell | Live neighbours | Next generation |
+|---|---|---|
+| dead | exactly 3 | **born at level 4** — the strongest |
+| alive | 2 or 3 | **level rises by one**, capped at 4 |
+| alive | 0, 1, or 4+ | level drops by one; dead at 0 |
+
+Neighbours are counted by presence, so a level-1 cell counts exactly as much as
+a level-4 one. Colour is the only thing the level changes — that, and how long a
+cell can survive a bad neighbourhood.
+
+The reason is that B3/S23 destroys a contribution graph. A calendar stacks
+weekdays vertically and wraps by week, so a run of active days becomes a dense
+rectangle whose interior cells all have eight live neighbours and die of
+overcrowding together. Measured on a real calendar: **121 live cells fall to 24
+in a single generation** under B3/S23, and to 6 by generation 40, where they sit
+unchanged for the rest of the animation. Under `decay` the same board recovers,
+reaching 203 cells and finishing at 179.
+
+This is not one of the established multi-state families either. In `Generations`
+rules — Brian's Brain and its relatives — an ageing cell occupies space but
+takes no part in births, and it can never return to being alive. Here an ageing
+cell counts fully as a neighbour and climbs back up as soon as it has two or
+three of them.
+
+`--rule standard` switches the widget to real B3/S23 if you would rather have
+the authentic rule than a board that keeps moving.
+
 ### Running it on your own graph
 
 Add one workflow to any repository of yours. The only thing it needs is a user

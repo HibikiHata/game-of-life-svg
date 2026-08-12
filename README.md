@@ -84,10 +84,29 @@ moves, the run emits only the static variant and says so on stderr. That
 happens with a sparse calendar, and it is the honest outcome: a frozen
 animation is worse than a still image.
 
+## The widget does not run Conway's rule
+
+Worth knowing before you adopt it. The gallery is B3/S23 throughout; the widget
+is not. It defaults to a four-level variant where a cell fades over four
+generations instead of dying at once — born at level 4 on exactly three
+neighbours, gaining a level while it has two or three, losing one otherwise, and
+dead at zero. Neighbours are counted by presence, so the level changes the colour
+and how long a cell survives a bad neighbourhood, nothing else.
+
+B3/S23 destroys a contribution graph. A calendar stacks weekdays vertically and
+wraps by week, so a run of active days forms a dense rectangle whose interior
+cells all have eight live neighbours and die of overcrowding together. Measured
+on a real calendar, **121 live cells fall to 24 in one generation** and to 6 by
+generation 40, where they stay for the rest of the animation. The variant
+recovers instead, peaking at 203.
+
+Pass `--rule standard` to the CLI if you want the authentic rule and accept the
+board dying. The Action does not expose it.
+
 ## One cell per run is derived from the date
 
-Worth knowing before you adopt it. Each run raises **one cell**, chosen by
-hashing the date, to the maximum level before the board evolves.
+Also worth knowing. Each run raises **one cell**, chosen by hashing the date, to
+the maximum level before the board evolves.
 
 Without it the widget would mostly repeat itself. Rows are fixed by the weekday
 and columns only advance at a week boundary, so a weekday with no contributions
