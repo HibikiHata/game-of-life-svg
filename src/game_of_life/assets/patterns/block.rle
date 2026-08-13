@@ -1,5 +1,5 @@
 #N Block
-#O John Conway, 1970
+#O John Conway, 1969
 #C explanation: Four cells in a square. Every cell has exactly three neighbours, so
 #C explanation: every cell survives and nothing new is born. It is the smallest thing in
 #C explanation: Life that simply refuses to change.

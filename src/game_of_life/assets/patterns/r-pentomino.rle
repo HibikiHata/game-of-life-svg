@@ -1,5 +1,5 @@
 #N R-pentomino
-#O John Conway, 1970
+#O John Conway, 1969
 #C explanation: Five cells that stay chaotic for 1,103 generations before settling into
 #C explanation: a scatter of debris and six escaping gliders. Conway tracked it by hand
 #C explanation: on a Go board; it was what convinced him that Life was worth studying.

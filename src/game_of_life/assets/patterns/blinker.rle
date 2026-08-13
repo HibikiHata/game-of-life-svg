@@ -1,5 +1,5 @@
 #N Blinker
-#O John Conway, 1970
+#O John Conway, 1969
 #C explanation: The smallest oscillator: three cells that flip between horizontal and
 #C explanation: vertical every generation. Almost every random start produces several of
 #C explanation: these.

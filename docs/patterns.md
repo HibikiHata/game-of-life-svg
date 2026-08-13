@@ -29,6 +29,14 @@ a pattern that flies off the edge behaves differently on a board whose edges
 wrap. Where an animation would be unwelcome, a **static** link gives the first
 frame as a still image — useful if you prefer reduced motion.
 
+**The boards here are finite, and each animation stops at a fixed number of
+generations.** Where an explanation quotes a lifetime — a methuselah running for
+thousands of generations, say — that is the published figure for an unbounded
+plane, not something this file reproduces. On a board this size the pattern
+reaches the edge first, and what happens after that is the boundary's doing. The
+figures are given because they are why the pattern is famous, not as a
+description of the picture beside them.
+
 ## Still lifes (`still-life`)
 
 Patterns that never change. Every live cell has exactly two or three live neighbours, so nothing dies, and no empty cell has exactly three, so nothing is born.
@@ -44,7 +52,7 @@ A hexagon of six cells. Like the block it is perfectly balanced, but it is the s
 
 Board 12×12, torus boundary. [Download the pattern](../src/game_of_life/assets/patterns/beehive.rle) · Still image for reduced motion: [light](patterns/beehive-light-static.svg) · [dark](patterns/beehive-dark-static.svg)
 
-### Block — John Conway, 1970
+### Block — John Conway, 1969
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="patterns/block-dark.svg">
@@ -136,7 +144,7 @@ Two blocks touching at a corner. The two cells nearest the join blink on and off
 
 Board 12×12, torus boundary. [Download the pattern](../src/game_of_life/assets/patterns/beacon.rle) · Still image for reduced motion: [light](patterns/beacon-light-static.svg) · [dark](patterns/beacon-dark-static.svg)
 
-### Blinker — John Conway, 1970
+### Blinker — John Conway, 1969
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="patterns/blinker-dark.svg">
@@ -346,7 +354,7 @@ Seven cells shaped like a lowercase h. Left alone it burns for hundreds of gener
 
 Board 80×80, fixed boundary. [Download the pattern](../src/game_of_life/assets/patterns/herschel.rle) · Still image for reduced motion: [light](patterns/herschel-light-static.svg) · [dark](patterns/herschel-dark-static.svg)
 
-### R-pentomino — John Conway, 1970
+### R-pentomino — John Conway, 1969
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="patterns/r-pentomino-dark.svg">

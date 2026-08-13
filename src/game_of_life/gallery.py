@@ -78,6 +78,14 @@ board size and the boundary condition are part of the pattern, not the renderer:
 a pattern that flies off the edge behaves differently on a board whose edges
 wrap. Where an animation would be unwelcome, a **static** link gives the first
 frame as a still image — useful if you prefer reduced motion.
+
+**The boards here are finite, and each animation stops at a fixed number of
+generations.** Where an explanation quotes a lifetime — a methuselah running for
+thousands of generations, say — that is the published figure for an unbounded
+plane, not something this file reproduces. On a board this size the pattern
+reaches the edge first, and what happens after that is the boundary's doing. The
+figures are given because they are why the pattern is famous, not as a
+description of the picture beside them.
 """
 
 
