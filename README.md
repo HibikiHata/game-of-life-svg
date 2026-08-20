@@ -49,7 +49,8 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git checkout --orphan output-tmp
           git rm -rf --cached . >/dev/null
-          git add -f output
+          mv output/*.svg .
+          git add -f ./*.svg
           git commit -m "chore: daily board"
           git push --force origin HEAD:output
 ```

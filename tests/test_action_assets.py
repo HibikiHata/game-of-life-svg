@@ -76,3 +76,11 @@ def test_no_untrusted_event_field_is_interpolated_into_a_shell_command():
     """Interpolating github.event.* raw into `run:` is an injection path."""
     text = DAILY_PATH.read_text(encoding="utf-8")
     assert "github.event." not in text
+
+
+def test_the_readme_publish_snippet_matches_the_workflow():
+    """The README drifted from daily.yml: it published the directory itself,
+    so every URL it then told the adopter to copy needed `output` twice."""
+    readme = (ROOT / "README.md").read_text(encoding="utf-8")
+    assert "mv output/*.svg ." in readme
+    assert "git add -f output\n" not in readme
