@@ -1,0 +1,8 @@
+# Keeps SHA-pinned action references current by opening update PRs.
+# Pins go stale unless something watches them; pinning and this watch go together.
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
